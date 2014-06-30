@@ -70,12 +70,10 @@
 
 - (void)paintOnPoint:(CGPoint)p onContext:(CGContextRef *)context
 {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        CGRect cirleRect = CGRectMake(p.x-20, p.y-20, 40, 40);
-        CGContextAddArc(*context, p.x, p.y, 20, 0.0, 2*M_PI, 0);
-        CGContextClip(*context);
-        CGContextClearRect(*context,cirleRect);
-    });
+    CGRect cirleRect = CGRectMake(p.x-20, p.y-20, 40, 40);
+    CGContextAddArc(*context, p.x, p.y, 20, 0.0, 2*M_PI, 0);
+    CGContextClip(*context);
+    CGContextClearRect(*context,cirleRect);
 }
 
 @end
