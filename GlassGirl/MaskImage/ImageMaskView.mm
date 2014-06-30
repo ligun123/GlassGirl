@@ -29,7 +29,7 @@
 #import "PointTransforms.h"
 #import "Matrix.h"
 
-enum{ radius = 20 };
+enum{ radius = 27 };
 
 typedef void  (*FillTileWithPointFunc)( id, SEL, CGPoint );
 typedef void  (*FillTileWithTwoPointsFunc)(id, SEL, CGPoint, CGPoint);
