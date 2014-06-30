@@ -146,7 +146,7 @@ typedef void  (*FillTileWithTwoPointsFunc)(id, SEL, CGPoint, CGPoint);
 			prevPoint = fromUItoQuartz(prevPoint, self.bounds.size);
 			prevPoint = scalePoint(prevPoint, self.bounds.size, size);
 			
-			CGContextSetStrokeColor(ctx,CGColorGetComponents([UIColor yellowColor].CGColor));
+//			CGContextSetStrokeColor(ctx,CGColorGetComponents([UIColor clearColor].CGColor));
 			CGContextSetLineCap(ctx, kCGLineCapRound);
 			CGContextSetLineWidth(ctx, 2*radius);
 			CGContextMoveToPoint(ctx, prevPoint.x, prevPoint.y);
