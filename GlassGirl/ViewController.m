@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "UIImage+Glass.h"
-#import "GlassImageView.h"
+#import "ImageMaskView.h"
 
 @interface ViewController ()
 
@@ -26,7 +26,7 @@
     imgview.frame = CGRectMake(0, 0, imgview.frame.size.width /2, imgview.frame.size.height /2);
     [self.view addSubview:imgview];
     
-    GlassImageView *glass = [[GlassImageView alloc] initWithImage:fish];
+    ImageMaskView *glass = [[ImageMaskView alloc] initWithFrame:imgview.frame image:fish];
     [self.view addSubview:glass];
 }
 

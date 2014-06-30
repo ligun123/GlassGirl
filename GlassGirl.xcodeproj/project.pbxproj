@@ -26,6 +26,8 @@
 		6A045FC9195D61440041A958 /* UIImage+Glass.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A045FC7195D61440041A958 /* UIImage+Glass.m */; };
 		6A045FCB195D7B1D0041A958 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A045FCA195D7B1D0041A958 /* QuartzCore.framework */; };
 		6A34D05A19610740009753FC /* GlassView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A34D05919610740009753FC /* GlassView.m */; };
+		6A34D06119615C91009753FC /* ImageMaskView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6A34D05D19615C91009753FC /* ImageMaskView.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6A34D06219615C91009753FC /* Matrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A34D05F19615C91009753FC /* Matrix.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,11 @@
 		6A045FCA195D7B1D0041A958 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6A34D05819610740009753FC /* GlassView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlassView.h; sourceTree = "<group>"; };
 		6A34D05919610740009753FC /* GlassView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlassView.m; sourceTree = "<group>"; };
+		6A34D05C19615C91009753FC /* ImageMaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageMaskView.h; sourceTree = "<group>"; };
+		6A34D05D19615C91009753FC /* ImageMaskView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ImageMaskView.mm; sourceTree = "<group>"; };
+		6A34D05E19615C91009753FC /* Matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix.h; sourceTree = "<group>"; };
+		6A34D05F19615C91009753FC /* Matrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Matrix.m; sourceTree = "<group>"; };
+		6A34D06019615C91009753FC /* PointTransforms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointTransforms.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +134,7 @@
 		6A045F92195D60930041A958 /* GlassGirl */ = {
 			isa = PBXGroup;
 			children = (
+				6A34D05B19615C91009753FC /* MaskImage */,
 				6A045FA4195D60930041A958 /* Images.xcassets */,
 				6A045F9B195D60930041A958 /* AppDelegate.h */,
 				6A045F9C195D60930041A958 /* AppDelegate.m */,
@@ -180,6 +188,18 @@
 				6A045FC2195D61080041A958 /* test.jpg */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		6A34D05B19615C91009753FC /* MaskImage */ = {
+			isa = PBXGroup;
+			children = (
+				6A34D05C19615C91009753FC /* ImageMaskView.h */,
+				6A34D05D19615C91009753FC /* ImageMaskView.mm */,
+				6A34D05E19615C91009753FC /* Matrix.h */,
+				6A34D05F19615C91009753FC /* Matrix.m */,
+				6A34D06019615C91009753FC /* PointTransforms.h */,
+			);
+			path = MaskImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,7 +300,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A34D06219615C91009753FC /* Matrix.m in Sources */,
 				6A045FC9195D61440041A958 /* UIImage+Glass.m in Sources */,
+				6A34D06119615C91009753FC /* ImageMaskView.mm in Sources */,
 				6A045FA3195D60930041A958 /* ViewController.m in Sources */,
 				6A045F9D195D60930041A958 /* AppDelegate.m in Sources */,
 				6A045F99195D60930041A958 /* main.m in Sources */,
