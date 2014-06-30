@@ -25,6 +25,7 @@
 		6A045FC8195D61440041A958 /* GlassImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A045FC5195D61440041A958 /* GlassImageView.m */; };
 		6A045FC9195D61440041A958 /* UIImage+Glass.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A045FC7195D61440041A958 /* UIImage+Glass.m */; };
 		6A045FCB195D7B1D0041A958 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A045FCA195D7B1D0041A958 /* QuartzCore.framework */; };
+		6A34D05A19610740009753FC /* GlassView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A34D05919610740009753FC /* GlassView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		6A045FC6195D61440041A958 /* UIImage+Glass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Glass.h"; sourceTree = "<group>"; };
 		6A045FC7195D61440041A958 /* UIImage+Glass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Glass.m"; sourceTree = "<group>"; };
 		6A045FCA195D7B1D0041A958 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		6A34D05819610740009753FC /* GlassView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlassView.h; sourceTree = "<group>"; };
+		6A34D05919610740009753FC /* GlassView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlassView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +135,8 @@
 				6A045FA2195D60930041A958 /* ViewController.m */,
 				6A045FC4195D61440041A958 /* GlassImageView.h */,
 				6A045FC5195D61440041A958 /* GlassImageView.m */,
+				6A34D05819610740009753FC /* GlassView.h */,
+				6A34D05919610740009753FC /* GlassView.m */,
 				6A045FC6195D61440041A958 /* UIImage+Glass.h */,
 				6A045FC7195D61440041A958 /* UIImage+Glass.m */,
 				6A045FC1195D61080041A958 /* Resources */,
@@ -280,6 +285,7 @@
 				6A045F9D195D60930041A958 /* AppDelegate.m in Sources */,
 				6A045F99195D60930041A958 /* main.m in Sources */,
 				6A045FC8195D61440041A958 /* GlassImageView.m in Sources */,
+				6A34D05A19610740009753FC /* GlassView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
