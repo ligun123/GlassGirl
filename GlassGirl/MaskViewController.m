@@ -75,6 +75,26 @@
 
 - (void)btnQQZone:(id)sender
 {
+    self.slComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTencentWeibo];
+    [self.slComposerSheet setInitialText:@"this is QQZone"];
+    [self.slComposerSheet addImage:[UIImage imageNamed:@"ios6.jpg"]];
+    [self.slComposerSheet addURL:[NSURL URLWithString:@"http://www.facebook.com/"]];
+    [self presentViewController:self.slComposerSheet animated:YES completion:nil];
+    [self.slComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
+        NSLog(@"start completion block");
+        NSString *output;
+        switch (result) {
+            case SLComposeViewControllerResultCancelled:
+                output = @"Action Cancelled";
+                break;
+            case SLComposeViewControllerResultDone:
+                output = @"Post Successfull";
+                break;
+            default:
+                break;
+        }
+        [self.slComposerSheet dismissModalViewControllerAnimated:NO];
+    }];
 }
 
 - (void)btnFacebook:(id)sender
@@ -97,6 +117,7 @@
             default:
                 break;
         }
+        [self.slComposerSheet dismissModalViewControllerAnimated:NO];
     }];
 }
 
@@ -121,6 +142,7 @@
             default:
                 break;
         }
+        [self.slComposerSheet dismissModalViewControllerAnimated:NO];
     }];
 }
 
@@ -146,6 +168,7 @@
             default:
                 break;
         }
+        [self.slComposerSheet dismissModalViewControllerAnimated:NO];
     }];
 }
 
