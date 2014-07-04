@@ -10,9 +10,11 @@
 #import "ImageMaskView.h"
 
 @interface MaskViewController : UIViewController
+{
+    BOOL isToolbarHidden;
+}
 
 @property (weak, nonatomic) IBOutlet UIImageView *srcImageView;
-@property (weak, nonatomic) IBOutlet ImageMaskView *dsrImageView;
 
 @property (copy, nonatomic) NSString *srcImgName;
 
