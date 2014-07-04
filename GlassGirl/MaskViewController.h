@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "ImageMaskView.h"
+#import <Twitter/Twitter.h>
+#import <Social/Social.h>
+#import <Accounts/Accounts.h>
 
 @interface MaskViewController : UIViewController
 {
     BOOL isToolbarHidden;
 }
+@property (strong, nonatomic) SLComposeViewController *slComposerSheet;
 
 @property (weak, nonatomic) IBOutlet UIImageView *srcImageView;
 

@@ -79,16 +79,74 @@
 
 - (void)btnFacebook:(id)sender
 {
+    self.slComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+    [self.slComposerSheet setInitialText:@"this is facebook"];
+    [self.slComposerSheet addImage:[UIImage imageNamed:@"ios6.jpg"]];
+    [self.slComposerSheet addURL:[NSURL URLWithString:@"http://www.facebook.com/"]];
+    [self presentViewController:self.slComposerSheet animated:YES completion:nil];
+    [self.slComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
+        NSLog(@"start completion block");
+        NSString *output;
+        switch (result) {
+            case SLComposeViewControllerResultCancelled:
+                output = @"Action Cancelled";
+                break;
+            case SLComposeViewControllerResultDone:
+                output = @"Post Successfull";
+                break;
+            default:
+                break;
+        }
+    }];
 }
 
 
 - (void)btnTwitter:(id)sender
 {
+    self.slComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    [self.slComposerSheet setInitialText:@"this is ios6 twitter"];
+    [self.slComposerSheet addImage:[UIImage imageNamed:@"ios6.jpg"]];
+    [self.slComposerSheet addURL:[NSURL URLWithString:@"http://www.twitter.com/"]];
+    [self presentViewController:self.slComposerSheet animated:YES completion:nil];
+    [self.slComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
+        NSLog(@"start completion block");
+        NSString *output;
+        switch (result) {
+            case SLComposeViewControllerResultCancelled:
+                output = @"Action Cancelled";
+                break;
+            case SLComposeViewControllerResultDone:
+                output = @"Post Successfull";
+                break;
+            default:
+                break;
+        }
+    }];
 }
 
 
 - (void)btnSina:(id)sender
 {
+    self.slComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeSinaWeibo];
+    [self.slComposerSheet setInitialText:@"Sina Weibo"];
+    [self.slComposerSheet addImage:[UIImage imageNamed:@"ios6.jpg"]];
+    [self.slComposerSheet addURL:[NSURL URLWithString:@"http://www.twitter.com/"]];
+    [self.slComposerSheet addURL:[NSURL URLWithString:@"http://www.weibo.com/"]];
+    [self presentViewController:self.slComposerSheet animated:YES completion:nil];
+    [self.slComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
+        NSLog(@"start completion block");
+        NSString *output;
+        switch (result) {
+            case SLComposeViewControllerResultCancelled:
+                output = @"Action Cancelled";
+                break;
+            case SLComposeViewControllerResultDone:
+                output = @"Post Successfull";
+                break;
+            default:
+                break;
+        }
+    }];
 }
 
 

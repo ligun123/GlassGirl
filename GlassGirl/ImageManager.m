@@ -28,7 +28,7 @@
         if (![[NSFileManager defaultManager] fileExistsAtPath:dscDir]) {
             NSString *dir = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"MyImg"];
             NSError *err = nil;
-            [[NSFileManager defaultManager] moveItemAtPath:dir toPath:[self resourceRootDir] error:&err];
+            [[NSFileManager defaultManager] copyItemAtPath:dir toPath:[self resourceRootDir] error:&err];
             if (err) {
                 NSLog(@"%s -> %@", __FUNCTION__, err);
             }
