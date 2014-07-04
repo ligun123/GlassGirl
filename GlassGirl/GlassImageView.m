@@ -49,7 +49,6 @@
     int perDis = 10;
     CGPoint pd = CGPointMake(pTo.x - pFrom.x, pTo.y - pFrom.y);
     int dis = (int)sqrt((int)pd.x * (int)pd.x + (int)pd.y * (int)pd.y);
-    NSLog(@"%s -> %d", __FUNCTION__, dis);
     int count = (int) (dis / perDis);
     
     UIGraphicsBeginImageContext(self.frame.size);

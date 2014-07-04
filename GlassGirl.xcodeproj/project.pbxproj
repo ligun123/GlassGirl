@@ -21,13 +21,15 @@
 		6A045FAE195D60930041A958 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A045F90195D60930041A958 /* UIKit.framework */; };
 		6A045FB6195D60930041A958 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A045FB4195D60930041A958 /* InfoPlist.strings */; };
 		6A045FB8195D60930041A958 /* GlassGirlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A045FB7195D60930041A958 /* GlassGirlTests.m */; };
-		6A045FC3195D61080041A958 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6A045FC2195D61080041A958 /* test.jpg */; };
 		6A045FC8195D61440041A958 /* GlassImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A045FC5195D61440041A958 /* GlassImageView.m */; };
 		6A045FC9195D61440041A958 /* UIImage+Glass.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A045FC7195D61440041A958 /* UIImage+Glass.m */; };
 		6A045FCB195D7B1D0041A958 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A045FCA195D7B1D0041A958 /* QuartzCore.framework */; };
+		6A0D5F2919665DCA0094BFE4 /* MyImg in Resources */ = {isa = PBXBuildFile; fileRef = 6A0D5F2819665DCA0094BFE4 /* MyImg */; };
 		6A34D05A19610740009753FC /* GlassView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A34D05919610740009753FC /* GlassView.m */; };
 		6A34D06119615C91009753FC /* ImageMaskView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6A34D05D19615C91009753FC /* ImageMaskView.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6A34D06219615C91009753FC /* Matrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A34D05F19615C91009753FC /* Matrix.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6A41671B1966467E00C44D40 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A41671A1966467E00C44D40 /* iCarousel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6A416721196659BF00C44D40 /* ImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A416720196659BF00C44D40 /* ImageManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,12 +62,12 @@
 		6A045FB3195D60930041A958 /* GlassGirlTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GlassGirlTests-Info.plist"; sourceTree = "<group>"; };
 		6A045FB5195D60930041A958 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6A045FB7195D60930041A958 /* GlassGirlTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlassGirlTests.m; sourceTree = "<group>"; };
-		6A045FC2195D61080041A958 /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
 		6A045FC4195D61440041A958 /* GlassImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlassImageView.h; sourceTree = "<group>"; };
 		6A045FC5195D61440041A958 /* GlassImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlassImageView.m; sourceTree = "<group>"; };
 		6A045FC6195D61440041A958 /* UIImage+Glass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Glass.h"; sourceTree = "<group>"; };
 		6A045FC7195D61440041A958 /* UIImage+Glass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Glass.m"; sourceTree = "<group>"; };
 		6A045FCA195D7B1D0041A958 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		6A0D5F2819665DCA0094BFE4 /* MyImg */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MyImg; sourceTree = "<group>"; };
 		6A34D05819610740009753FC /* GlassView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlassView.h; sourceTree = "<group>"; };
 		6A34D05919610740009753FC /* GlassView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlassView.m; sourceTree = "<group>"; };
 		6A34D05C19615C91009753FC /* ImageMaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageMaskView.h; sourceTree = "<group>"; };
@@ -73,6 +75,10 @@
 		6A34D05E19615C91009753FC /* Matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix.h; sourceTree = "<group>"; };
 		6A34D05F19615C91009753FC /* Matrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Matrix.m; sourceTree = "<group>"; };
 		6A34D06019615C91009753FC /* PointTransforms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointTransforms.h; sourceTree = "<group>"; };
+		6A4167191966467E00C44D40 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		6A41671A1966467E00C44D40 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		6A41671F196659BF00C44D40 /* ImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManager.h; sourceTree = "<group>"; };
+		6A416720196659BF00C44D40 /* ImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,20 +140,21 @@
 		6A045F92195D60930041A958 /* GlassGirl */ = {
 			isa = PBXGroup;
 			children = (
-				6A34D05B19615C91009753FC /* MaskImage */,
+				6A0D5F2819665DCA0094BFE4 /* MyImg */,
+				6A41671E1966599000C44D40 /* GlassView */,
 				6A045FA4195D60930041A958 /* Images.xcassets */,
 				6A045F9B195D60930041A958 /* AppDelegate.h */,
 				6A045F9C195D60930041A958 /* AppDelegate.m */,
 				6A045F9E195D60930041A958 /* Main.storyboard */,
 				6A045FA1195D60930041A958 /* ViewController.h */,
 				6A045FA2195D60930041A958 /* ViewController.m */,
-				6A045FC4195D61440041A958 /* GlassImageView.h */,
-				6A045FC5195D61440041A958 /* GlassImageView.m */,
-				6A34D05819610740009753FC /* GlassView.h */,
-				6A34D05919610740009753FC /* GlassView.m */,
+				6A34D05B19615C91009753FC /* MaskImage */,
 				6A045FC6195D61440041A958 /* UIImage+Glass.h */,
 				6A045FC7195D61440041A958 /* UIImage+Glass.m */,
-				6A045FC1195D61080041A958 /* Resources */,
+				6A4167191966467E00C44D40 /* iCarousel.h */,
+				6A41671A1966467E00C44D40 /* iCarousel.m */,
+				6A41671F196659BF00C44D40 /* ImageManager.h */,
+				6A416720196659BF00C44D40 /* ImageManager.m */,
 				6A045F93195D60930041A958 /* Supporting Files */,
 			);
 			path = GlassGirl;
@@ -182,14 +189,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6A045FC1195D61080041A958 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				6A045FC2195D61080041A958 /* test.jpg */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		6A34D05B19615C91009753FC /* MaskImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +199,17 @@
 				6A34D06019615C91009753FC /* PointTransforms.h */,
 			);
 			path = MaskImage;
+			sourceTree = "<group>";
+		};
+		6A41671E1966599000C44D40 /* GlassView */ = {
+			isa = PBXGroup;
+			children = (
+				6A045FC4195D61440041A958 /* GlassImageView.h */,
+				6A045FC5195D61440041A958 /* GlassImageView.m */,
+				6A34D05819610740009753FC /* GlassView.h */,
+				6A34D05919610740009753FC /* GlassView.m */,
+			);
+			name = GlassView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,10 +288,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A0D5F2919665DCA0094BFE4 /* MyImg in Resources */,
 				6A045FA5195D60930041A958 /* Images.xcassets in Resources */,
 				6A045F97195D60930041A958 /* InfoPlist.strings in Resources */,
 				6A045FA0195D60930041A958 /* Main.storyboard in Resources */,
-				6A045FC3195D61080041A958 /* test.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,9 +313,11 @@
 				6A34D06219615C91009753FC /* Matrix.m in Sources */,
 				6A045FC9195D61440041A958 /* UIImage+Glass.m in Sources */,
 				6A34D06119615C91009753FC /* ImageMaskView.mm in Sources */,
+				6A41671B1966467E00C44D40 /* iCarousel.m in Sources */,
 				6A045FA3195D60930041A958 /* ViewController.m in Sources */,
 				6A045F9D195D60930041A958 /* AppDelegate.m in Sources */,
 				6A045F99195D60930041A958 /* main.m in Sources */,
+				6A416721196659BF00C44D40 /* ImageManager.m in Sources */,
 				6A045FC8195D61440041A958 /* GlassImageView.m in Sources */,
 				6A34D05A19610740009753FC /* GlassView.m in Sources */,
 			);
