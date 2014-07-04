@@ -19,9 +19,28 @@
     return manager;
 }
 
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        NSString *dscDir = [self resourceRootDir];
+        if (![[NSFileManager defaultManager] fileExistsAtPath:dscDir]) {
+            NSString *dir = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"MyImg"];
+            NSError *err = nil;
+            [[NSFileManager defaultManager] moveItemAtPath:dir toPath:[self resourceRootDir] error:&err];
+            if (err) {
+                NSLog(@"%s -> %@", __FUNCTION__, err);
+            }
+        }
+    }
+    return self;
+}
+
 - (NSString *)resourceRootDir
 {
-    NSString *dir = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"MyImg"];
+    NSString *document = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *dir = [document stringByAppendingPathComponent:@"MyImg"];
     return dir;
 }
 

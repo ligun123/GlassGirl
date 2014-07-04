@@ -11,8 +11,8 @@
 
 @interface ViewController : UIViewController <iCarouselDataSource, iCarouselDelegate>
 
-@property (retain, nonatomic) IBOutlet iCarousel *coverFlow;
+@property (weak, nonatomic) IBOutlet iCarousel *coverFlow;
 
-@property (retain, nonatomic) NSArray *imageArray;
+@property (strong, nonatomic) NSArray *imageArray;
 
 @end

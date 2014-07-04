@@ -70,30 +70,42 @@ typedef void  (*FillTileWithTwoPointsFunc)(id, SEL, CGPoint, CGPoint);
 		self.userInteractionEnabled = YES;
 		self.backgroundColor = [UIColor clearColor];
 		self.imageMaskFilledDelegate = nil;
-		
-		self.image = img;
-		CGSize size = self.image.size;
-		
-		// initalize bitmap context
-		self.colorSpace = CGColorSpaceCreateDeviceRGB();
-		self.imageContext = CGBitmapContextCreate(0,size.width, 
-												  size.height, 
-												  8, 
-												  size.width*4, 
-												  colorSpace, 
-												  kCGImageAlphaPremultipliedLast	);
-		CGContextDrawImage(self.imageContext, CGRectMake(0, 0, size.width, size.height), self.image.CGImage);
-		
-		int blendMode = kCGBlendModeClear;
-		CGContextSetBlendMode(self.imageContext, (CGBlendMode) blendMode);
-		
-		tilesX = size.width / (2 * radius);
-		tilesY = size.height / (2 * radius);
-		
-		self.maskedMatrix = [[[Matrix alloc] initWithMax:MySizeMake(tilesX, tilesY)] autorelease];
-		self.tilesFilled = 0;
+		[self setMaskImage:img];
     }
     return self;
+}
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    self.userInteractionEnabled = YES;
+    self.backgroundColor = [UIColor clearColor];
+    self.imageMaskFilledDelegate = nil;
+}
+
+- (void)setMaskImage:(UIImage *)img
+{
+    self.image = img;
+    CGSize size = self.image.size;
+    
+    // initalize bitmap context
+    self.colorSpace = CGColorSpaceCreateDeviceRGB();
+    self.imageContext = CGBitmapContextCreate(0,size.width,
+                                              size.height,
+                                              8,
+                                              size.width*4,
+                                              colorSpace,
+                                              kCGImageAlphaPremultipliedLast	);
+    CGContextDrawImage(self.imageContext, CGRectMake(0, 0, size.width, size.height), self.image.CGImage);
+    
+    int blendMode = kCGBlendModeClear;
+    CGContextSetBlendMode(self.imageContext, (CGBlendMode) blendMode);
+    
+    tilesX = size.width / (2 * radius);
+    tilesY = size.height / (2 * radius);
+    
+    self.maskedMatrix = [[[Matrix alloc] initWithMax:MySizeMake(tilesX, tilesY)] autorelease];
+    self.tilesFilled = 0;
 }
 
 #pragma mark -
@@ -105,7 +117,7 @@ typedef void  (*FillTileWithTwoPointsFunc)(id, SEL, CGPoint, CGPoint);
 #pragma mark - UIResponder
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-	self.image = [self addTouches:touches];
+//	self.image = [self addTouches:touches];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{

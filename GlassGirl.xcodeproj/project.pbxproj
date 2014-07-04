@@ -28,6 +28,7 @@
 		6A34D05A19610740009753FC /* GlassView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A34D05919610740009753FC /* GlassView.m */; };
 		6A34D06119615C91009753FC /* ImageMaskView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6A34D05D19615C91009753FC /* ImageMaskView.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6A34D06219615C91009753FC /* Matrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A34D05F19615C91009753FC /* Matrix.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6A400881196679BC00B39B08 /* MaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A40087F196679BC00B39B08 /* MaskViewController.m */; };
 		6A41671B1966467E00C44D40 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A41671A1966467E00C44D40 /* iCarousel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6A416721196659BF00C44D40 /* ImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A416720196659BF00C44D40 /* ImageManager.m */; };
 /* End PBXBuildFile section */
@@ -75,6 +76,8 @@
 		6A34D05E19615C91009753FC /* Matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix.h; sourceTree = "<group>"; };
 		6A34D05F19615C91009753FC /* Matrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Matrix.m; sourceTree = "<group>"; };
 		6A34D06019615C91009753FC /* PointTransforms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointTransforms.h; sourceTree = "<group>"; };
+		6A40087E196679BC00B39B08 /* MaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaskViewController.h; sourceTree = "<group>"; };
+		6A40087F196679BC00B39B08 /* MaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaskViewController.m; sourceTree = "<group>"; };
 		6A4167191966467E00C44D40 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		6A41671A1966467E00C44D40 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		6A41671F196659BF00C44D40 /* ImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManager.h; sourceTree = "<group>"; };
@@ -148,6 +151,8 @@
 				6A045F9E195D60930041A958 /* Main.storyboard */,
 				6A045FA1195D60930041A958 /* ViewController.h */,
 				6A045FA2195D60930041A958 /* ViewController.m */,
+				6A40087E196679BC00B39B08 /* MaskViewController.h */,
+				6A40087F196679BC00B39B08 /* MaskViewController.m */,
 				6A34D05B19615C91009753FC /* MaskImage */,
 				6A045FC6195D61440041A958 /* UIImage+Glass.h */,
 				6A045FC7195D61440041A958 /* UIImage+Glass.m */,
@@ -316,6 +321,7 @@
 				6A41671B1966467E00C44D40 /* iCarousel.m in Sources */,
 				6A045FA3195D60930041A958 /* ViewController.m in Sources */,
 				6A045F9D195D60930041A958 /* AppDelegate.m in Sources */,
+				6A400881196679BC00B39B08 /* MaskViewController.m in Sources */,
 				6A045F99195D60930041A958 /* main.m in Sources */,
 				6A416721196659BF00C44D40 /* ImageManager.m in Sources */,
 				6A045FC8195D61440041A958 /* GlassImageView.m in Sources */,

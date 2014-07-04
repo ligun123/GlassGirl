@@ -10,6 +10,7 @@
 #import "UIImage+Glass.h"
 #import "ImageMaskView.h"
 #import "ImageManager.h"
+#import "MaskViewController.h"
 
 @interface ViewController ()
 
@@ -25,17 +26,12 @@
     self.coverFlow.delegate = self;
     self.coverFlow.dataSource = self;
     self.coverFlow.type = iCarouselTypeCoverFlow;
-    
-    /*
-    UIImage *tmp = [UIImage imageNamed:@"test.jpg"];
-    UIImage *fish = [tmp glassImage];
-    UIImageView *imgview = [[UIImageView alloc] initWithImage:tmp];
-    imgview.frame = CGRectMake(0, 0, imgview.frame.size.width /2, imgview.frame.size.height /2);
-    [self.view addSubview:imgview];
-    
-    ImageMaskView *glass = [[ImageMaskView alloc] initWithFrame:imgview.frame image:fish];
-    [self.view addSubview:glass];
-     */
+}
+
+
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -95,6 +91,10 @@
 {
     if (carousel.currentItemIndex == index) {
         //开始擦玻璃
+        UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        MaskViewController *mask = [story instantiateViewControllerWithIdentifier:@"MaskViewController"];
+        mask.srcImgName = self.imageArray[index];
+        [self presentViewController:mask animated:YES completion:nil];
     }
 }
 
