@@ -75,100 +75,6 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)btnQQZone:(id)sender
-{
-    self.slComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTencentWeibo];
-    [self.slComposerSheet setInitialText:@""];
-    UIImage *imgSend = [self convertViewToImage:self.view];
-    [self.slComposerSheet addImage:imgSend];
-    [self.slComposerSheet addURL:[NSURL URLWithString:k_URL_APP]];
-    [self presentViewController:self.slComposerSheet animated:YES completion:nil];
-    [self.slComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
-        switch (result) {
-            case SLComposeViewControllerResultCancelled:
-                NSLog(@"%s -> SLComposeViewControllerResultCancelled", __FUNCTION__);
-                break;
-            case SLComposeViewControllerResultDone:
-                NSLog(@"%s -> SLComposeViewControllerResultDone", __FUNCTION__);
-                break;
-            default:
-                break;
-        }
-        [self.slComposerSheet dismissModalViewControllerAnimated:NO];
-    }];
-}
-
-- (void)btnFacebook:(id)sender
-{
-    self.slComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-    [self.slComposerSheet setInitialText:@""];
-    UIImage *imgSend = [self convertViewToImage:self.view];
-    [self.slComposerSheet addImage:imgSend];
-    [self.slComposerSheet addURL:[NSURL URLWithString:k_URL_APP]];
-    [self presentViewController:self.slComposerSheet animated:YES completion:nil];
-    [self.slComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
-        switch (result) {
-            case SLComposeViewControllerResultCancelled:
-                NSLog(@"%s -> SLComposeViewControllerResultCancelled", __FUNCTION__);
-                break;
-            case SLComposeViewControllerResultDone:
-                NSLog(@"%s -> SLComposeViewControllerResultDone", __FUNCTION__);
-                break;
-            default:
-                break;
-        }
-        [self.slComposerSheet dismissViewControllerAnimated:YES completion:nil];
-    }];
-}
-
-
-- (void)btnTwitter:(id)sender
-{
-    self.slComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-    [self.slComposerSheet setInitialText:@""];
-    UIImage *imgSend = [self convertViewToImage:self.view];
-    [self.slComposerSheet addImage:imgSend];
-    [self.slComposerSheet addURL:[NSURL URLWithString:k_URL_APP]];
-    [self presentViewController:self.slComposerSheet animated:YES completion:nil];
-    [self.slComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
-        switch (result) {
-            case SLComposeViewControllerResultCancelled:
-                NSLog(@"%s -> SLComposeViewControllerResultCancelled", __FUNCTION__);
-                break;
-            case SLComposeViewControllerResultDone:
-                NSLog(@"%s -> SLComposeViewControllerResultDone", __FUNCTION__);
-                break;
-            default:
-                break;
-        }
-        [self.slComposerSheet dismissViewControllerAnimated:YES completion:nil];
-    }];
-}
-
-
-- (void)btnSina:(id)sender
-{
-    self.slComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeSinaWeibo];
-    [self.slComposerSheet setInitialText:@""];
-    UIImage *imgSend = [self convertViewToImage:self.view];
-    [self.slComposerSheet addImage:imgSend];
-    [self.slComposerSheet addURL:[NSURL URLWithString:k_URL_APP]];
-    [self presentViewController:self.slComposerSheet animated:YES completion:nil];
-    [self.slComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
-        switch (result) {
-            case SLComposeViewControllerResultCancelled:
-                NSLog(@"%s -> SLComposeViewControllerResultCancelled", __FUNCTION__);
-                break;
-            case SLComposeViewControllerResultDone:
-                NSLog(@"%s -> SLComposeViewControllerResultDone", __FUNCTION__);
-                break;
-            default:
-                break;
-        }
-        [self.slComposerSheet dismissViewControllerAnimated:YES completion:nil];
-    }];
-}
-
 
 - (BOOL)prefersStatusBarHidden
 {
@@ -204,16 +110,112 @@
     }];
 }
 
-
-
--(UIImage*)convertViewToImage:(UIView*)v {
-    UIGraphicsBeginImageContext(v.bounds.size);
-//    [v.layer renderInContext:UIGraphicsGetCurrentContext()];
-    [self.srcImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
-    [self.maskView.layer renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage*image = UIGraphicsGetImageFromCurrentImageContext();
+-(UIImage*)convertImage {
+    CGSize size = self.srcImageView.image.size;
+    UIGraphicsBeginImageContext(size);
+    [self.srcImageView.image drawAtPoint:CGPointZero];
+    [self.maskView.image drawAtPoint:CGPointZero];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return image;
 }
+
+
+#pragma mark - 分享
+
+- (void)btnQQZone:(id)sender
+{
+    SLComposeViewController *comp = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTencentWeibo];
+    [comp setInitialText:@""];
+    UIImage *imgSend = [self convertImage];
+    [comp addImage:imgSend];
+    [comp addURL:[NSURL URLWithString:k_URL_APP]];
+    [comp setCompletionHandler:^(SLComposeViewControllerResult result) {
+        switch (result) {
+            case SLComposeViewControllerResultCancelled:
+                NSLog(@"%s -> SLComposeViewControllerResultCancelled", __FUNCTION__);
+                break;
+            case SLComposeViewControllerResultDone:
+                NSLog(@"%s -> SLComposeViewControllerResultDone", __FUNCTION__);
+                break;
+            default:
+                break;
+        }
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [self presentViewController:comp animated:YES completion:nil];
+}
+
+- (void)btnFacebook:(id)sender
+{
+    SLComposeViewController *comp = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+    [comp setInitialText:@""];
+    UIImage *imgSend = [self convertImage];
+    [comp addImage:imgSend];
+    [comp addURL:[NSURL URLWithString:k_URL_APP]];
+    [comp setCompletionHandler:^(SLComposeViewControllerResult result) {
+        switch (result) {
+            case SLComposeViewControllerResultCancelled:
+                NSLog(@"%s -> SLComposeViewControllerResultCancelled", __FUNCTION__);
+                break;
+            case SLComposeViewControllerResultDone:
+                NSLog(@"%s -> SLComposeViewControllerResultDone", __FUNCTION__);
+                break;
+            default:
+                break;
+        }
+//        [comp dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [self presentViewController:comp animated:YES completion:nil];
+}
+
+
+- (void)btnTwitter:(id)sender
+{
+    SLComposeViewController *comp = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    [comp setInitialText:@""];
+    UIImage *imgSend = [self convertImage];
+    [comp addImage:imgSend];
+    [comp addURL:[NSURL URLWithString:k_URL_APP]];
+    [comp setCompletionHandler:^(SLComposeViewControllerResult result) {
+        switch (result) {
+            case SLComposeViewControllerResultCancelled:
+                NSLog(@"%s -> SLComposeViewControllerResultCancelled", __FUNCTION__);
+                break;
+            case SLComposeViewControllerResultDone:
+                NSLog(@"%s -> SLComposeViewControllerResultDone", __FUNCTION__);
+                break;
+            default:
+                break;
+        }
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [self presentViewController:comp animated:YES completion:nil];
+}
+
+- (void)btnSina:(id)sender
+{
+    SLComposeViewController *comp = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeSinaWeibo];
+    [comp setInitialText:@""];
+    UIImage *imgSend = [self convertImage];
+    [comp addImage:imgSend];
+    [comp addURL:[NSURL URLWithString:k_URL_APP]];
+    [comp setCompletionHandler:^(SLComposeViewControllerResult result) {
+        switch (result) {
+            case SLComposeViewControllerResultCancelled:
+                NSLog(@"%s -> SLComposeViewControllerResultCancelled", __FUNCTION__);
+                break;
+            case SLComposeViewControllerResultDone:
+                NSLog(@"%s -> SLComposeViewControllerResultDone", __FUNCTION__);
+                break;
+            default:
+                break;
+        }
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [self presentViewController:comp animated:YES completion:nil];
+}
+
+
 
 @end

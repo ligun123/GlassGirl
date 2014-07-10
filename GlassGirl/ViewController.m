@@ -50,7 +50,7 @@
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index
 {
     NSString *imgRes = self.imageArray[index];
-    UIImage *oriImg = [[ImageManager shareManager] imageOfName:imgRes];
+    UIImage *oriImg = [[ImageManager shareManager] glassImageOfName:imgRes];
     UIView *view = [[UIImageView alloc] initWithImage:oriImg];
     
     view.frame = CGRectMake(70, 80, 213, 320);

@@ -7,6 +7,7 @@
 //
 
 #import "ImageManager.h"
+#import "UIImage+Glass.h"
 
 @implementation ImageManager
 
@@ -32,9 +33,39 @@
             if (err) {
                 NSLog(@"%s -> %@", __FUNCTION__, err);
             }
+            [self initGlassImage];
         }
     }
     return self;
+}
+
+- (void)initGlassImage
+{
+    NSString *imgDir = [self resourceRootDir];
+    NSString *glassDir = [self glassRootDir];
+    //创建glass folder
+    NSError *err = nil;
+    [[NSFileManager defaultManager] createDirectoryAtPath:glassDir withIntermediateDirectories:YES attributes:nil error:&err];
+    if (err) {
+        NSLog(@"%s -> %@", __FUNCTION__, err);
+    }
+    
+    NSArray *srcImgPaths = [self resourceImages];
+    for (NSString *item in srcImgPaths) {
+        NSString *srcItem = [imgDir stringByAppendingPathComponent:item];
+        UIImage *srcImg = [UIImage imageWithContentsOfFile:srcItem];
+        UIImage *glassImg = [srcImg glassImage];
+        NSData *data = UIImageJPEGRepresentation(glassImg, 1.0);
+        NSString *dscPath = [glassDir stringByAppendingPathComponent:item];
+        [data writeToFile:dscPath atomically:YES];
+    }
+}
+
+- (NSString *)glassRootDir
+{
+    NSString *document = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *dir = [document stringByAppendingPathComponent:@"Glass"];
+    return dir;
 }
 
 - (NSString *)resourceRootDir
@@ -55,6 +86,12 @@
 - (UIImage *)imageOfName:(NSString *)imgName
 {
     NSString *path = [[self resourceRootDir] stringByAppendingPathComponent:imgName];
+    return [UIImage imageWithContentsOfFile:path];
+}
+
+- (UIImage *)glassImageOfName:(NSString *)imgName
+{
+    NSString *path = [[self glassRootDir] stringByAppendingPathComponent:imgName];
     return [UIImage imageWithContentsOfFile:path];
 }
 

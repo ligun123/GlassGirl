@@ -20,4 +20,6 @@
 
 - (UIImage *)imageOfName:(NSString *)imgName;
 
+- (UIImage *)glassImageOfName:(NSString *)imgName;
+
 @end
