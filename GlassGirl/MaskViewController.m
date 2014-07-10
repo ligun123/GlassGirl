@@ -10,6 +10,8 @@
 #import "UIImage+Glass.h"
 #import "ImageManager.h"
 
+#define k_URL_APP @"http://www.baidu.com"
+
 @interface MaskViewController ()
 
 @end
@@ -23,8 +25,8 @@
     // Do any additional setup after loading the view from its nib.
     UIImage *img = [[ImageManager shareManager] imageOfName:self.srcImgName];
     self.srcImageView.image = img;
-    ImageMaskView *mskView = [[ImageMaskView alloc] initWithFrame:self.view.bounds image:[img glassImage]];
-    [self.view insertSubview:mskView aboveSubview:self.srcImageView];
+    self.maskView = [[ImageMaskView alloc] initWithFrame:self.view.bounds image:[img glassImage]];
+    [self.view insertSubview:self.maskView aboveSubview:self.srcImageView];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTap:)];
     tap.numberOfTouchesRequired = 1;
@@ -76,19 +78,18 @@
 - (void)btnQQZone:(id)sender
 {
     self.slComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTencentWeibo];
-    [self.slComposerSheet setInitialText:@"this is QQZone"];
-    [self.slComposerSheet addImage:[UIImage imageNamed:@"ios6.jpg"]];
-    [self.slComposerSheet addURL:[NSURL URLWithString:@"http://www.facebook.com/"]];
+    [self.slComposerSheet setInitialText:@""];
+    UIImage *imgSend = [self convertViewToImage:self.view];
+    [self.slComposerSheet addImage:imgSend];
+    [self.slComposerSheet addURL:[NSURL URLWithString:k_URL_APP]];
     [self presentViewController:self.slComposerSheet animated:YES completion:nil];
     [self.slComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
-        NSLog(@"start completion block");
-        NSString *output;
         switch (result) {
             case SLComposeViewControllerResultCancelled:
-                output = @"Action Cancelled";
+                NSLog(@"%s -> SLComposeViewControllerResultCancelled", __FUNCTION__);
                 break;
             case SLComposeViewControllerResultDone:
-                output = @"Post Successfull";
+                NSLog(@"%s -> SLComposeViewControllerResultDone", __FUNCTION__);
                 break;
             default:
                 break;
@@ -100,24 +101,23 @@
 - (void)btnFacebook:(id)sender
 {
     self.slComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-    [self.slComposerSheet setInitialText:@"this is facebook"];
-    [self.slComposerSheet addImage:[UIImage imageNamed:@"ios6.jpg"]];
-    [self.slComposerSheet addURL:[NSURL URLWithString:@"http://www.facebook.com/"]];
+    [self.slComposerSheet setInitialText:@""];
+    UIImage *imgSend = [self convertViewToImage:self.view];
+    [self.slComposerSheet addImage:imgSend];
+    [self.slComposerSheet addURL:[NSURL URLWithString:k_URL_APP]];
     [self presentViewController:self.slComposerSheet animated:YES completion:nil];
     [self.slComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
-        NSLog(@"start completion block");
-        NSString *output;
         switch (result) {
             case SLComposeViewControllerResultCancelled:
-                output = @"Action Cancelled";
+                NSLog(@"%s -> SLComposeViewControllerResultCancelled", __FUNCTION__);
                 break;
             case SLComposeViewControllerResultDone:
-                output = @"Post Successfull";
+                NSLog(@"%s -> SLComposeViewControllerResultDone", __FUNCTION__);
                 break;
             default:
                 break;
         }
-        [self.slComposerSheet dismissModalViewControllerAnimated:NO];
+        [self.slComposerSheet dismissViewControllerAnimated:YES completion:nil];
     }];
 }
 
@@ -125,24 +125,23 @@
 - (void)btnTwitter:(id)sender
 {
     self.slComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-    [self.slComposerSheet setInitialText:@"this is ios6 twitter"];
-    [self.slComposerSheet addImage:[UIImage imageNamed:@"ios6.jpg"]];
-    [self.slComposerSheet addURL:[NSURL URLWithString:@"http://www.twitter.com/"]];
+    [self.slComposerSheet setInitialText:@""];
+    UIImage *imgSend = [self convertViewToImage:self.view];
+    [self.slComposerSheet addImage:imgSend];
+    [self.slComposerSheet addURL:[NSURL URLWithString:k_URL_APP]];
     [self presentViewController:self.slComposerSheet animated:YES completion:nil];
     [self.slComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
-        NSLog(@"start completion block");
-        NSString *output;
         switch (result) {
             case SLComposeViewControllerResultCancelled:
-                output = @"Action Cancelled";
+                NSLog(@"%s -> SLComposeViewControllerResultCancelled", __FUNCTION__);
                 break;
             case SLComposeViewControllerResultDone:
-                output = @"Post Successfull";
+                NSLog(@"%s -> SLComposeViewControllerResultDone", __FUNCTION__);
                 break;
             default:
                 break;
         }
-        [self.slComposerSheet dismissModalViewControllerAnimated:NO];
+        [self.slComposerSheet dismissViewControllerAnimated:YES completion:nil];
     }];
 }
 
@@ -150,25 +149,23 @@
 - (void)btnSina:(id)sender
 {
     self.slComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeSinaWeibo];
-    [self.slComposerSheet setInitialText:@"Sina Weibo"];
-    [self.slComposerSheet addImage:[UIImage imageNamed:@"ios6.jpg"]];
-    [self.slComposerSheet addURL:[NSURL URLWithString:@"http://www.twitter.com/"]];
-    [self.slComposerSheet addURL:[NSURL URLWithString:@"http://www.weibo.com/"]];
+    [self.slComposerSheet setInitialText:@""];
+    UIImage *imgSend = [self convertViewToImage:self.view];
+    [self.slComposerSheet addImage:imgSend];
+    [self.slComposerSheet addURL:[NSURL URLWithString:k_URL_APP]];
     [self presentViewController:self.slComposerSheet animated:YES completion:nil];
     [self.slComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
-        NSLog(@"start completion block");
-        NSString *output;
         switch (result) {
             case SLComposeViewControllerResultCancelled:
-                output = @"Action Cancelled";
+                NSLog(@"%s -> SLComposeViewControllerResultCancelled", __FUNCTION__);
                 break;
             case SLComposeViewControllerResultDone:
-                output = @"Post Successfull";
+                NSLog(@"%s -> SLComposeViewControllerResultDone", __FUNCTION__);
                 break;
             default:
                 break;
         }
-        [self.slComposerSheet dismissModalViewControllerAnimated:NO];
+        [self.slComposerSheet dismissViewControllerAnimated:YES completion:nil];
     }];
 }
 
@@ -205,6 +202,18 @@
     } completion:^(BOOL finished) {
         isToolbarHidden = YES;
     }];
+}
+
+
+
+-(UIImage*)convertViewToImage:(UIView*)v {
+    UIGraphicsBeginImageContext(v.bounds.size);
+//    [v.layer renderInContext:UIGraphicsGetCurrentContext()];
+    [self.srcImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    [self.maskView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage*image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
 }
 
 @end

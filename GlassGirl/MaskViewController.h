@@ -16,9 +16,11 @@
 {
     BOOL isToolbarHidden;
 }
+
 @property (strong, nonatomic) SLComposeViewController *slComposerSheet;
 
 @property (weak, nonatomic) IBOutlet UIImageView *srcImageView;
+@property (strong, nonatomic) ImageMaskView *maskView;
 
 @property (copy, nonatomic) NSString *srcImgName;
 
