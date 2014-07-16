@@ -9,6 +9,7 @@
 #import "MaskViewController.h"
 #import "UIImage+Glass.h"
 #import "ImageManager.h"
+#import "WXApi.h"
 
 #define k_URL_APP @"http://www.baidu.com"
 
@@ -42,15 +43,12 @@
     [btnBack addTarget:self action:@selector(btnBackTap:) forControlEvents:UIControlEventTouchUpInside];
     [self.toolbar addSubview:btnBack];
     
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] > 6.999) {
-        //IOS7+可以QQZone分享
-        UIButton *btnQQZone = [UIButton buttonWithType:UIButtonTypeCustom];
-        btnQQZone.frame = CGRectMake(160, 5, 34, 34);
-        [btnQQZone setImage:[UIImage imageNamed:@"sns_icon_6"] forState:UIControlStateNormal];
-        [btnQQZone addTarget:self action:@selector(btnQQZone:) forControlEvents:UIControlEventTouchUpInside];
-        [self.toolbar addSubview:btnQQZone];
-    }
-    
+    UIButton *btnQQZone = [UIButton buttonWithType:UIButtonTypeCustom];
+    btnQQZone.frame = CGRectMake(160, 5, 34, 34);
+    [btnQQZone setImage:[UIImage imageNamed:@"sns_icon_22"] forState:UIControlStateNormal];
+    [btnQQZone addTarget:self action:@selector(btnQQZone:) forControlEvents:UIControlEventTouchUpInside];
+    [self.toolbar addSubview:btnQQZone];
+
     UIButton *btnSina = [UIButton buttonWithType:UIButtonTypeCustom];
     btnSina.frame = CGRectMake(200, 5, 34, 34);
     [btnSina setImage:[UIImage imageNamed:@"sns_icon_1"] forState:UIControlStateNormal];
@@ -123,32 +121,30 @@
 
 #pragma mark - 分享
 
+//微信朋友圈
 - (void)btnQQZone:(id)sender
 {
-    SLComposeViewController *comp = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTencentWeibo];
-    [comp setInitialText:@""];
-    UIImage *imgSend = [self convertImage];
-    [comp addImage:imgSend];
-    [comp addURL:[NSURL URLWithString:k_URL_APP]];
-    [comp setCompletionHandler:^(SLComposeViewControllerResult result) {
-        switch (result) {
-            case SLComposeViewControllerResultCancelled:
-                NSLog(@"%s -> SLComposeViewControllerResultCancelled", __FUNCTION__);
-                break;
-            case SLComposeViewControllerResultDone:
-                NSLog(@"%s -> SLComposeViewControllerResultDone", __FUNCTION__);
-                break;
-            default:
-                break;
-        }
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }];
-    [self presentViewController:comp animated:YES completion:nil];
+    WXMediaMessage *message = [WXMediaMessage message];
+    [message setThumbImage:[UIImage imageNamed:@"Icon.jpg"]];
+    
+    WXImageObject *ext = [WXImageObject object];
+    
+    UIImage* image = [self convertImage];
+    ext.imageData = UIImagePNGRepresentation(image);
+    message.mediaObject = ext;
+    
+    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
+    req.bText = NO;
+    req.message = message;
+    req.scene = WXSceneTimeline;
+    
+    [WXApi sendReq:req];
 }
 
 - (void)btnFacebook:(id)sender
 {
     SLComposeViewController *comp = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+    if (comp == nil) return ;
     [comp setInitialText:@""];
     UIImage *imgSend = [self convertImage];
     [comp addImage:imgSend];
@@ -173,6 +169,7 @@
 - (void)btnTwitter:(id)sender
 {
     SLComposeViewController *comp = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    if (comp == nil) return ;
     [comp setInitialText:@""];
     UIImage *imgSend = [self convertImage];
     [comp addImage:imgSend];
@@ -196,6 +193,7 @@
 - (void)btnSina:(id)sender
 {
     SLComposeViewController *comp = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeSinaWeibo];
+    if (comp == nil) return ;
     [comp setInitialText:@""];
     UIImage *imgSend = [self convertImage];
     [comp addImage:imgSend];
