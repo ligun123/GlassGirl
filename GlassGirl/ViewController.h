@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "iCarousel.h"
 
-@interface ViewController : UIViewController <iCarouselDataSource, iCarouselDelegate>
+@interface ViewController : UIViewController <iCarouselDataSource, iCarouselDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet iCarousel *coverFlow;
 

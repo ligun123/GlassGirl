@@ -95,4 +95,45 @@
     return [UIImage imageWithContentsOfFile:path];
 }
 
+- (void)saveNewImage:(UIImage *)origImg
+{
+    NSString *namePrefix = [ImageManager uuidString];
+    NSString *name = [namePrefix stringByAppendingString:@".png"];
+    
+    NSString *origPath = [[self resourceRootDir] stringByAppendingPathComponent:name];
+    [UIImagePNGRepresentation(origImg) writeToFile:origPath atomically:YES];
+    
+    UIImage *img = [UIImage imageWithContentsOfFile:origPath];
+    UIImage *glassImg = [img glassImage];
+    NSString *glassPath = [[self glassRootDir] stringByAppendingPathComponent:name];
+    [UIImagePNGRepresentation(glassImg) writeToFile:glassPath atomically:YES];
+}
+
+
++ (NSString *)uuidString
+{
+    CFUUIDRef puuid = CFUUIDCreate( nil );
+    CFStringRef uuidString = CFUUIDCreateString( nil, puuid );
+    NSString * result = (NSString *)CFBridgingRelease(CFStringCreateCopy( NULL, uuidString));
+    CFRelease(puuid);
+    CFRelease(uuidString);
+    return result;
+}
+
+- (void)removeItem:(NSString *)itemName
+{
+    NSString *oriPath = [[self resourceRootDir] stringByAppendingPathComponent:itemName];
+    NSError *err = nil;
+    [[NSFileManager defaultManager] removeItemAtPath:oriPath error:&err];
+    if (err) {
+        NSLog(@"%s -> %@", __FUNCTION__, err);
+    }
+    
+    NSString *glsPath = [[self glassRootDir] stringByAppendingPathComponent:itemName];
+    [[NSFileManager defaultManager] removeItemAtPath:glsPath error:&err];
+    if (err) {
+        NSLog(@"%s -> %@", __FUNCTION__, err);
+    }
+}
+
 @end

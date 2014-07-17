@@ -139,6 +139,7 @@
     
 #endif
     
+    self.backgroundColor = [UIColor clearColor];
     [self addSubview:contentView];
 	[self reloadData];
 }

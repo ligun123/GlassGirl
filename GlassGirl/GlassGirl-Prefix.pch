@@ -13,4 +13,6 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+
+#define k_Name_Add_New_Pic @"k_Name_Add_New_Pic"
 #endif

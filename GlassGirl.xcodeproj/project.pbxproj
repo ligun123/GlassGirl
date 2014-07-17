@@ -40,6 +40,11 @@
 		6A34D05A19610740009753FC /* GlassView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A34D05919610740009753FC /* GlassView.m */; };
 		6A34D06119615C91009753FC /* ImageMaskView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6A34D05D19615C91009753FC /* ImageMaskView.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6A34D06219615C91009753FC /* Matrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A34D05F19615C91009753FC /* Matrix.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6A39526E19779A5800E26514 /* btnPlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A39526B19779A5800E26514 /* btnPlay@2x.png */; };
+		6A39526F19779A5800E26514 /* btnSavePlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A39526C19779A5800E26514 /* btnSavePlay@2x.png */; };
+		6A39527019779A5800E26514 /* GreenBack@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6A39526D19779A5800E26514 /* GreenBack@2x.jpg */; };
+		6A39527319779E8F00E26514 /* UIImage+Expand.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A39527219779E8F00E26514 /* UIImage+Expand.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6A3952761977A0FC00E26514 /* ImageEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3952751977A0FC00E26514 /* ImageEditViewController.m */; };
 		6A400881196679BC00B39B08 /* MaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A40087F196679BC00B39B08 /* MaskViewController.m */; };
 		6A4008841966961B00B39B08 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4008831966961B00B39B08 /* Social.framework */; };
 		6A40088D19669AF900B39B08 /* sns_icon_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A40088519669AF900B39B08 /* sns_icon_6.png */; };
@@ -116,6 +121,13 @@
 		6A34D05E19615C91009753FC /* Matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix.h; sourceTree = "<group>"; };
 		6A34D05F19615C91009753FC /* Matrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Matrix.m; sourceTree = "<group>"; };
 		6A34D06019615C91009753FC /* PointTransforms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointTransforms.h; sourceTree = "<group>"; };
+		6A39526B19779A5800E26514 /* btnPlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnPlay@2x.png"; sourceTree = "<group>"; };
+		6A39526C19779A5800E26514 /* btnSavePlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnSavePlay@2x.png"; sourceTree = "<group>"; };
+		6A39526D19779A5800E26514 /* GreenBack@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "GreenBack@2x.jpg"; sourceTree = "<group>"; };
+		6A39527119779E8F00E26514 /* UIImage+Expand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Expand.h"; sourceTree = "<group>"; };
+		6A39527219779E8F00E26514 /* UIImage+Expand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Expand.m"; sourceTree = "<group>"; };
+		6A3952741977A0FC00E26514 /* ImageEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageEditViewController.h; sourceTree = "<group>"; };
+		6A3952751977A0FC00E26514 /* ImageEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageEditViewController.m; sourceTree = "<group>"; };
 		6A40087E196679BC00B39B08 /* MaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaskViewController.h; sourceTree = "<group>"; };
 		6A40087F196679BC00B39B08 /* MaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaskViewController.m; sourceTree = "<group>"; };
 		6A4008831966961B00B39B08 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -202,10 +214,11 @@
 		6A045F92195D60930041A958 /* GlassGirl */ = {
 			isa = PBXGroup;
 			children = (
-				6A22D6D619764B1B00C515B9 /* WeChat */,
-				6A0D5F2819665DCA0094BFE4 /* MyImg */,
-				6A41671E1966599000C44D40 /* GlassView */,
 				6A045FA4195D60930041A958 /* Images.xcassets */,
+				6A0D5F2819665DCA0094BFE4 /* MyImg */,
+				6A22D6D619764B1B00C515B9 /* WeChat */,
+				6A41671E1966599000C44D40 /* GlassView */,
+				6A34D05B19615C91009753FC /* MaskImage */,
 				6A045F9B195D60930041A958 /* AppDelegate.h */,
 				6A045F9C195D60930041A958 /* AppDelegate.m */,
 				6A22D6E21976699600C515B9 /* Main.storyboard */,
@@ -213,13 +226,16 @@
 				6A045FA2195D60930041A958 /* ViewController.m */,
 				6A40087E196679BC00B39B08 /* MaskViewController.h */,
 				6A40087F196679BC00B39B08 /* MaskViewController.m */,
-				6A34D05B19615C91009753FC /* MaskImage */,
+				6A3952741977A0FC00E26514 /* ImageEditViewController.h */,
+				6A3952751977A0FC00E26514 /* ImageEditViewController.m */,
 				6A045FC6195D61440041A958 /* UIImage+Glass.h */,
 				6A045FC7195D61440041A958 /* UIImage+Glass.m */,
 				6A4167191966467E00C44D40 /* iCarousel.h */,
 				6A41671A1966467E00C44D40 /* iCarousel.m */,
 				6A41671F196659BF00C44D40 /* ImageManager.h */,
 				6A416720196659BF00C44D40 /* ImageManager.m */,
+				6A39527119779E8F00E26514 /* UIImage+Expand.h */,
+				6A39527219779E8F00E26514 /* UIImage+Expand.m */,
 				6A045F93195D60930041A958 /* Supporting Files */,
 			);
 			path = GlassGirl;
@@ -228,6 +244,9 @@
 		6A045F93195D60930041A958 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6A39526B19779A5800E26514 /* btnPlay@2x.png */,
+				6A39526C19779A5800E26514 /* btnSavePlay@2x.png */,
+				6A39526D19779A5800E26514 /* GreenBack@2x.jpg */,
 				6A22D6DF1976539300C515B9 /* Icon.jpg */,
 				6A22D6D219761F4400C515B9 /* Icon-57.png */,
 				6A22D6D319761F4400C515B9 /* Icon-57@2x.png */,
@@ -394,6 +413,7 @@
 				6A40089119669AF900B39B08 /* sns_icon_11.png in Resources */,
 				6A40089819669B5400B39B08 /* sns_icon_1@2x.png in Resources */,
 				6A0D5F2919665DCA0094BFE4 /* MyImg in Resources */,
+				6A39526F19779A5800E26514 /* btnSavePlay@2x.png in Resources */,
 				6A22D6E01976539300C515B9 /* Icon.jpg in Resources */,
 				6A40089719669B5400B39B08 /* sns_icon_1.png in Resources */,
 				6A22D6D119761EE000C515B9 /* Icon-29.png in Resources */,
@@ -402,8 +422,10 @@
 				6A22D6C719761AB600C515B9 /* Default@2x.png in Resources */,
 				6A22D6CB19761C7200C515B9 /* Icon-29@2x.png in Resources */,
 				6A22D6DD1976517000C515B9 /* sns_icon_22.png in Resources */,
+				6A39527019779A5800E26514 /* GreenBack@2x.jpg in Resources */,
 				6A22D6D519761F4400C515B9 /* Icon-57@2x.png in Resources */,
 				6A22D6CD19761C7200C515B9 /* Icon-60@2x.png in Resources */,
+				6A39526E19779A5800E26514 /* btnPlay@2x.png in Resources */,
 				6A40089019669AF900B39B08 /* sns_icon_10@2x.png in Resources */,
 				6A40088E19669AF900B39B08 /* sns_icon_6@2x.png in Resources */,
 				6A22D6CC19761C7200C515B9 /* Icon-40@2x.png in Resources */,
@@ -433,10 +455,12 @@
 				6A045FA3195D60930041A958 /* ViewController.m in Sources */,
 				6A045F9D195D60930041A958 /* AppDelegate.m in Sources */,
 				6A400881196679BC00B39B08 /* MaskViewController.m in Sources */,
+				6A3952761977A0FC00E26514 /* ImageEditViewController.m in Sources */,
 				6A045F99195D60930041A958 /* main.m in Sources */,
 				6A416721196659BF00C44D40 /* ImageManager.m in Sources */,
 				6A045FC8195D61440041A958 /* GlassImageView.m in Sources */,
 				6A34D05A19610740009753FC /* GlassView.m in Sources */,
+				6A39527319779E8F00E26514 /* UIImage+Expand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

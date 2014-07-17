@@ -22,4 +22,8 @@
 
 - (UIImage *)glassImageOfName:(NSString *)imgName;
 
+- (void)saveNewImage:(UIImage *)origImg;
+
+- (void)removeItem:(NSString *)itemName;
+
 @end

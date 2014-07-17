@@ -57,7 +57,40 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JLV-ZB-2u0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="849" y="-79"/>
+            <point key="canvasLocation" x="805" y="136"/>
+        </scene>
+        <!--Image Edit View Controller-->
+        <scene sceneID="XHc-yC-KfM">
+            <objects>
+                <viewController storyboardIdentifier="ImageEditViewController" id="8Fs-Q1-fM5" customClass="ImageEditViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jae-U7-3xC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ivB-6i-30I">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="hsn-ME-5xy">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <connections>
+                                    <outlet property="delegate" destination="8Fs-Q1-fM5" id="i0v-Rh-jNP"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="imgView" destination="hsn-ME-5xy" id="9Yy-lY-jmM"/>
+                        <outlet property="rootScrollView" destination="ivB-6i-30I" id="8XI-rt-XfS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ngf-cU-c11" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1283" y="136"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
