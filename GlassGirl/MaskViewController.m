@@ -202,7 +202,7 @@
 {
     SLComposeViewController *comp = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
     if (comp == nil) return ;
-    [comp setInitialText:@""];
+    [comp setInitialText:NSLocalizedString(@"RecommendText", nil)];
     UIImage *imgSend = [self convertImage];
     [comp addImage:imgSend];
     [comp addURL:[NSURL URLWithString:k_URL_APP]];
@@ -226,7 +226,7 @@
 {
     SLComposeViewController *comp = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeSinaWeibo];
     if (comp == nil) return ;
-    [comp setInitialText:@""];
+    [comp setInitialText:NSLocalizedString(@"RecommendText", nil)];
     UIImage *imgSend = [self convertImage];
     [comp addImage:imgSend];
     [comp addURL:[NSURL URLWithString:k_URL_APP]];
