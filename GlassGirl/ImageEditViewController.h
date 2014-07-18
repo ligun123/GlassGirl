@@ -18,8 +18,5 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *rootScrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *imgView;
 
-- (IBAction)btnCancelTap:(id)sender;
-
-- (IBAction)btnDoneTap:(id)sender;
 
 @end

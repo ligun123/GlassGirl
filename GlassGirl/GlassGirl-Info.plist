@@ -32,6 +32,16 @@
 				<string>wx2ebe84f18a103b15</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.glass.back</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wxback</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>

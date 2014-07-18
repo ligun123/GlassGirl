@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  GlassGirl
+
+  Created by HalloWorld on 14-7-18.
+  Copyright (c) 2014年 HalloWorld. All rights reserved.
+*/
+"ErrorArea" = "錯誤的裁減區域，請重新調整照片大小和位置！";
+"OK" = "OK";
+"Album" = "相冊";
+"LongTapOnPicToDelete" = "長按照片可刪除";
+"DeleteSure" = "確定要刪除這張照片麼？";
+"YES" = "是";
+"NO" = "不是";
+"RecommendText" = "擦一擦，發現毛玻璃背後的秘密。";

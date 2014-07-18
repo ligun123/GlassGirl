@@ -25,12 +25,19 @@
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
+    NSLog(@"%s -> %@", __FUNCTION__, url);
     return  [WXApi handleOpenURL:url delegate:self];
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
+    NSLog(@"%s -> %@", __FUNCTION__, url);
     return  [WXApi handleOpenURL:url delegate:self];
+}
+
+-(void) onReq:(BaseReq*)req
+{
+    NSLog(@"%s -> ", __FUNCTION__);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

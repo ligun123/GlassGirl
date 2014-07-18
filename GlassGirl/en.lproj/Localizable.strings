@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  GlassGirl
+
+  Created by HalloWorld on 14-7-18.
+  Copyright (c) 2014年 HalloWorld. All rights reserved.
+*/
+
+"ErrorArea" = "You select a error area! Retry pls.";
+"OK" = "OK";
+"Album" = "Album";
+"LongTapOnPicToDelete" = "Long tap on the picture to delete!";
+"DeleteSure" = "Are you sure to delete the picture?";
+"YES" = "YES";
+"NO" = "NO";
+"RecommendText" = "Rub and discover the secret behind the frosted glass!";

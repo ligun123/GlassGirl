@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  GlassGirl
+
+  Created by HalloWorld on 14-7-18.
+  Copyright (c) 2014年 HalloWorld. All rights reserved.
+*/
+
+"ErrorArea" = "오류 감소 지역, 다시 조절 사진의 크기와 위치!";
+"OK" = "OK";
+"Album" = "앨범";
+"LongTapOnPicToDelete" = "긴 조각에 따라 삭제 될 수 있습니다";
+"DeleteSure" = "당신은 확실히 당신이 사진을 삭제 하시겠습니까?";
+"YES" = "YES";
+"NO" = "NO";
+"RecommendText" = "문지, 젖빛 유리의 비밀을 발견 할 수 있습니다.";

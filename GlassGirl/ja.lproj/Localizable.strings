@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  GlassGirl
+
+  Created by HalloWorld on 14-7-18.
+  Copyright (c) 2014年 HalloWorld. All rights reserved.
+*/
+"ErrorArea" = "エラーの減少領域は、画像サイズと位置を再調整！";
+"OK" = "OK";
+"Album" = "アルバム";
+"LongTapOnPicToDelete" = "長い作品はに従って削除することができます";
+"DeleteSure" = "あなたは必ずこの写真を削除しますか？";
+"YES" = "YES";
+"NO" = "NO";
+"RecommendText" = "こする、すりガラスの秘密を発見する";

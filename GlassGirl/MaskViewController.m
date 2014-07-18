@@ -10,6 +10,7 @@
 #import "UIImage+Glass.h"
 #import "ImageManager.h"
 #import "WXApi.h"
+#import "UIImage+Expand.h"
 
 #define k_URL_APP @"http://www.baidu.com"
 
@@ -25,8 +26,12 @@
     isToolbarHidden = NO;
     // Do any additional setup after loading the view from its nib.
     UIImage *img = [[ImageManager shareManager] imageOfName:self.srcImgName];
+    CGRect f = self.srcImageView.frame;
+    f.size = CGSizeMake(img.size.width/2, img.size.height/2);
+    f = CGRectOffset(f, 0, -(f.size.height - self.view.bounds.size.height) / 2);
+    self.srcImageView.frame = f;
     self.srcImageView.image = img;
-    self.maskView = [[ImageMaskView alloc] initWithFrame:self.view.bounds image:[img glassImage]];
+    self.maskView = [[ImageMaskView alloc] initWithFrame:self.srcImageView.frame image:[img glassImage]];
     [self.view insertSubview:self.maskView aboveSubview:self.srcImageView];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTap:)];
@@ -108,7 +113,7 @@
     }];
 }
 
--(UIImage*)convertImage {
+- (UIImage*)convertImage {
     CGSize size = self.srcImageView.image.size;
     UIGraphicsBeginImageContext(size);
     [self.srcImageView.image drawAtPoint:CGPointZero];
@@ -141,11 +146,38 @@
     [WXApi sendReq:req];
 }
 
+
+//废弃的方法
+- (void) sendAppContent
+{
+    WXMediaMessage *message = [WXMediaMessage message];
+    message.title = @"App消息";
+    message.description = @"这种消息只有App自己才能理解，由App指定打开方式！";
+    UIImage *img = [self convertImage];
+    NSData *data = UIImageJPEGRepresentation(img, 0.4);
+    [message setThumbData:data];
+    
+    WXAppExtendObject *ext = [WXAppExtendObject object];
+    ext.extInfo = @"<xml>extend info</xml>";
+    ext.url = @"wx2ebe84f18a103b15://platformId=wechat";
+    ext.fileData = data;
+    
+    message.mediaObject = ext;
+    
+    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
+    req.bText = NO;
+    req.message = message;
+    req.scene = WXSceneTimeline;
+    
+    [WXApi sendReq:req];
+}
+
+
 - (void)btnFacebook:(id)sender
 {
     SLComposeViewController *comp = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
     if (comp == nil) return ;
-    [comp setInitialText:@""];
+    [comp setInitialText:NSLocalizedString(@"RecommendText", nil)];
     UIImage *imgSend = [self convertImage];
     [comp addImage:imgSend];
     [comp addURL:[NSURL URLWithString:k_URL_APP]];

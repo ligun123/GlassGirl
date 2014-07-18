@@ -67,23 +67,20 @@
 */
 
 
-- (IBAction)btnDoneTap:(id)sender {
+- (void)btnDoneTap:(id)sender {
     CGPoint offset = self.rootScrollView.contentOffset;
     int x = offset.x / scaleResult;
     int y = offset.y / scaleResult;
-    CGRect cutRect = CGRectZero;
+    CGRect cutRect = CGRectZero;    //计算原始照片中被裁减的区域
     cutRect.origin = CGPointMake(x, y);
     
     int width = self.view.bounds.size.width / scaleResult;
     int height = self.view.bounds.size.height / scaleResult;
     cutRect.size = CGSizeMake(width, height);
     
-    NSLog(@"%s -> %@", __FUNCTION__, NSStringFromCGRect(cutRect));
-    
     CGRect imgRect = CGRectZero;
     imgRect.size = self.originalImage.size;
     if (CGRectContainsRect(imgRect, cutRect)) {
-        NSLog(@"%s -> Good scale", __FUNCTION__);
         UIImage *cuttedImage = [self.originalImage imageAtRect:cutRect];
         UIImage *goodImage = [cuttedImage imageByScalingProportionallyToSize:[UIScreen mainScreen].bounds.size];
         [[ImageManager shareManager] saveNewImage:goodImage];
@@ -91,7 +88,7 @@
             [[NSNotificationCenter defaultCenter] postNotificationName:k_Name_Add_New_Pic object:nil];
         }];
     } else {
-        NSLog(@"%s -> Bad scale", __FUNCTION__);
+        [[[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"ErrorArea", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil, nil] show];
     }
 }
 
