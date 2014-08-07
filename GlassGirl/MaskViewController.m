@@ -12,7 +12,7 @@
 #import "WXApi.h"
 #import "UIImage+Expand.h"
 
-#define k_URL_APP @"http://www.baidu.com"
+#define k_URL_APP @"https://itunes.apple.com/us/app/secret-glass/id899999374"
 
 @interface MaskViewController ()
 
