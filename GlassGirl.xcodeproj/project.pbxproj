@@ -631,6 +631,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "2A075CF2-EBD8-4703-B355-ACFF56588489";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -650,6 +651,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "EBC691CC-32B4-4278-B115-C4F437439099";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
