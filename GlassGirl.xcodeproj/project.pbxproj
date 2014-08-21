@@ -23,6 +23,7 @@
 		6A045FC9195D61440041A958 /* UIImage+Glass.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A045FC7195D61440041A958 /* UIImage+Glass.m */; };
 		6A045FCB195D7B1D0041A958 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A045FCA195D7B1D0041A958 /* QuartzCore.framework */; };
 		6A0D5F2919665DCA0094BFE4 /* MyImg in Resources */ = {isa = PBXBuildFile; fileRef = 6A0D5F2819665DCA0094BFE4 /* MyImg */; };
+		6A1BD15E19A498710083B8F3 /* love in Resources */ = {isa = PBXBuildFile; fileRef = 6A1BD15D19A498710083B8F3 /* love */; };
 		6A22D6C719761AB600C515B9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A22D6C619761AB600C515B9 /* Default@2x.png */; };
 		6A22D6CB19761C7200C515B9 /* Icon-29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A22D6C819761C7200C515B9 /* Icon-29@2x.png */; };
 		6A22D6CC19761C7200C515B9 /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A22D6C919761C7200C515B9 /* Icon-40@2x.png */; };
@@ -97,6 +98,7 @@
 		6A045FC7195D61440041A958 /* UIImage+Glass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Glass.m"; sourceTree = "<group>"; };
 		6A045FCA195D7B1D0041A958 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6A0D5F2819665DCA0094BFE4 /* MyImg */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MyImg; sourceTree = "<group>"; };
+		6A1BD15D19A498710083B8F3 /* love */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = love; sourceTree = "<group>"; };
 		6A22D6C619761AB600C515B9 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		6A22D6C819761C7200C515B9 /* Icon-29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-29@2x.png"; sourceTree = "<group>"; };
 		6A22D6C919761C7200C515B9 /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@2x.png"; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 		6A045F93195D60930041A958 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6A1BD15D19A498710083B8F3 /* love */,
 				6A39526B19779A5800E26514 /* btnPlay@2x.png */,
 				6A39526C19779A5800E26514 /* btnSavePlay@2x.png */,
 				6A39526D19779A5800E26514 /* GreenBack@2x.jpg */,
@@ -438,6 +441,7 @@
 				6A40089719669B5400B39B08 /* sns_icon_1.png in Resources */,
 				6A22D6D119761EE000C515B9 /* Icon-29.png in Resources */,
 				6A045FA5195D60930041A958 /* Images.xcassets in Resources */,
+				6A1BD15E19A498710083B8F3 /* love in Resources */,
 				6A40088D19669AF900B39B08 /* sns_icon_6.png in Resources */,
 				6A22D6C719761AB600C515B9 /* Default@2x.png in Resources */,
 				6ACABBBD197921830086319D /* Localizable.strings in Resources */,
